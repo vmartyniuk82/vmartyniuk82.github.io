@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="slider/slick-1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slider/slick-1.8.1/slick/slick-theme.css"/>
+    <script type="text/javascript" src="jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="slider/slick-1.8.1/slick/slick.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
@@ -59,8 +63,8 @@
                 </div>
                 <div class="nav-upgrade">
                     <img src="images/for-btn-upgrade.svg" alt="">
-                    <p>Give your money <br> awesome space in cloud</p>
-                    <button class="btn-upgrade">Upgrade to premium &uparrow;</button>
+                    <p>Give your money <br>awesome space in cloud</p>
+                    <button class="btn-upgrade">Upgrade to premium <img src="images/arr-up.svg" alt=""></button>
                 </div>
             </nav>
             <main>                          <!-- main content -->
@@ -69,14 +73,11 @@
                         <h2>Cards</h2>
                         <div class="card-wrapper">
                             <div class="card-content-left">
-                                <div class="card-content-left-upper">
-                                    <div class="card-scroll-left">
-                                        <img src="images/arr-left.svg" alt="arr-left">
-                                    </div>
-                                    <div class="card-item">
+                                <div class="single-slide">      <!-- slick slider -->
+                                    <div data-card-index="1" class="card-item">
                                         <div class="card-item-wrapper">
                                             <p class="card-brand">cloudcash</p>   
-                                            <p class="card-type">PREMIUM ACCOUNT</p>
+                                            <p class="card-type">PREMIUM ACCOUNT 1</p>
                                             <p class="card-number">5789 &nbsp;&nbsp;* * * * &nbsp;&nbsp; * * * * &nbsp;&nbsp;2847</p>
                                             <div class="card-data-table">
                                                 <div class="card-row">
@@ -91,36 +92,43 @@
                                         </div>
                                         <img src="images/card-design.svg" alt="card-design">
                                     </div>
-                                    <div class="card-scroll-right">
-                                        <img src="images/arr-right.svg" alt="arr-right">
+                                    <div data-card-index="2"  class="card-item">
+                                        <div class="card-item-wrapper">
+                                            <p class="card-brand">cloudcash</p>   
+                                            <p class="card-type">PREMIUM ACCOUNT 2</p>
+                                            <p class="card-number">3413 &nbsp;&nbsp;* * * * &nbsp;&nbsp; * * * * &nbsp;&nbsp;9354</p>
+                                            <div class="card-data-table">
+                                                <div class="card-row">
+                                                    <p class="card-text">Card holder</p>
+                                                    <p class="card-holder">Mike Smith</p>
+                                                </div>
+                                                <div class="card-row">
+                                                    <p class="card-text">Expire date</p>
+                                                    <p class="card-expire">02/23</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="images/card-design.svg" alt="card-design">
                                     </div>
                                 </div>
-                                <div class="card-content-left-lower">
-                                    <div class="card-scroll-left">
+                                <div class="card-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-bar-inner"></div>
                                     </div>
-                                    <div class="card-progress">
-                                        <div class="progress-bar">
-                                            <div class="progress-bar-inner"></div>
-                                        </div>
-                                        <div class="card-limit">
-                                            <p>Weekly payment limit</p>
-                                            <p>$350.60 / $4000</p>
-                                        </div>
-                                    </div>
-                                    <div class="card-scroll-right">
+                                    <div class="card-limit">
+                                        <p>Weekly payment limit</p>
+                                        <p>$350.60 / $4000</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="card-content-right">
                                 <div class="card-info">
-                                    <div class="card-info-data">
-                                        <p class="cash-current">$ 2850.75</p>
-                                        <p class="card-info-text">Current balance</p>
-                                        <p class="cash-income">$ 1500.50</p>
-                                        <p class="card-info-text">Income</p>
-                                        <p class="cash-outcome">$ 350.60</p>
-                                        <p class="card-info-text">Outcome</p>
-                                    </div>
+                                    <p class="cash-current">$ 2850.75</p>
+                                    <p class="card-info-text">Current balance</p>
+                                    <p class="cash-income">$ 1500.50</p>
+                                    <p class="card-info-text">Income</p>
+                                    <p class="cash-outcome">$ 350.60</p>
+                                    <p class="card-info-text">Outcome</p>
                                 </div>
                                 <div class="card-deactivate">
                                     <div class="btn-deactivate">
@@ -184,7 +192,7 @@
                             <h2>Goals</h2>
                             <img src="images/plus-circle.svg" alt="picture Add new">
                         </div>
-                        <div class="goals-wrapper">
+                        <div class="multiple-items">    <!-- slick slider -->
                             <div class="goal-item">
                                 <div class="goal-item-wrapper">
                                     <p class="goal-amount">$550.00</p>
@@ -193,6 +201,7 @@
                                     <p class="goal-name">Holidays</p>
                                 </div>
                             </div>
+
                             <div class="goal-item">
                                 <div class="goal-item-wrapper">
                                     <p class="goal-amount">$200.00</p>
@@ -201,6 +210,25 @@
                                     <p class="goal-name">Renovation</p>
                                 </div>   
                             </div>
+
+                            <div class="goal-item">
+                                <div class="goal-item-wrapper">
+                                    <p class="goal-amount">$820.00</p>
+                                    <p class="goal-date">12/20/20</p>
+                                    <img src="images/goal-xbox.svg" alt="goal-xbox">
+                                    <p class="goal-name">Xbox</p>
+                                </div>
+                            </div>
+
+                             <div class="goal-item">
+                                <div class="goal-item-wrapper">
+                                    <p class="goal-amount">$200.00</p>
+                                    <p class="goal-date">12/20/20</p>
+                                    <img src="images/goal-brush.svg" alt="goal-brush">
+                                    <p class="goal-name">Renovation</p>
+                                </div>   
+                            </div>
+
                             <div class="goal-item">
                                 <div class="goal-item-wrapper">
                                     <p class="goal-amount">$820.00</p>
@@ -211,6 +239,8 @@
                             </div>
                         </div>
                     </div>
+
+                    
                     <div class="statistics">            <!-- outcome statistics -->
                         <h2>Outcome statistics</h2>
                         <div id="statistics-shopping" class="statistics-item">
@@ -238,7 +268,7 @@
                             <p class="statistics-percent">74%</p>
                         </div>
                     </div>
-                    <div class="new-transaction">       <!-- new transaction -->
+                    <div class="new-transaction">       <!--    new transaction     -->
                         <div class="new-transaction-wrapper">
                             <h2>New transactions</h2>
                             <div class="persons">
@@ -267,21 +297,19 @@
                                     <p>Add New</p>
                                 </div>
                             </div>
-                            <div class="field-send-amount">
-                                <form action="post">
-                                    <input id="send-amount" type="text" placeholder="0                              $">
-                                    <button class="send-transfer">Send the transfer ></button>
-                                </form>
-                            </div>
+                            <form action="" class="field-send-amount">
+                                <input id="send-amount" type="text" placeholder="0                              $">
+                                <button class="btn-send-transfer">Send the transfer <img src="images/btn-arr-right.svg" alt="arr-right"></button>
+                            </form>
                         </div>
-                        <!-- get-loan -->
-                        <div class="get-loan">
-                            <p>Get great loan! ></p>
+                        <div class="get-loan">          <!-- get-loan -->
+                            <a href="#">Get great loan! <img src="images/for-get-loan-arrow.svg" alt="get-loan"></a>
                         </div>
                     </div>
                 </div>
             </main>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -9,6 +9,9 @@
     margin: 0;
     padding: 0;
 }
+a {
+    text-decoration: none;
+}
 p {
     font-size: 14px;
     font-style: normal;
@@ -25,8 +28,7 @@ h1 {
 }
 h2 {
     height: 25px;
-    
-    font-family: Poppins-SemiBold;
+    font-family: Poppins;
     font-size: 20px;
     font-style: normal;
     line-height: 25px;
@@ -42,16 +44,16 @@ img {
     background: #F1F1F1;
 }
 .progress-bar-inner {
-    width: 25%;
+    width: 10%;
     height: 10px;
     border-radius: 11px;
     background: #197BBD;
 }
 
 .dashboard {                                /*-------  body  -------*/
-    background: rgb(197, 194, 194);
-    width: 100vw;
-    height: 100%;
+    /* width: 100vw;
+    height: 100vh; */
+    background: linear-gradient(180deg, #E6E6E6 0%, rgba(240, 240, 240, 0) 100%);
 }
 .board {
     width: 1476.59px;
@@ -127,12 +129,14 @@ nav {                       /*-----------     nav    -----------*/
     width: 210px;
     margin-left: 40.54px;
     border-right: 2px solid #F8F8F8;
+    padding-top: 55.78px;
 }
 .nav-item {
     width: 165px;
     height: 39px;
     border-radius: 4px;
     display: flex;
+    margin-bottom: 6.5px;
 }
 .nav-item > img {   /*  correct*/
     width: 30px;
@@ -159,7 +163,7 @@ nav {                       /*-----------     nav    -----------*/
     flex-direction: column;
     align-items: center;
     
-    margin-top: 368px;
+    margin-top: 275.5px;
 }
 .nav-upgrade img {
     width: 71.11px;
@@ -170,10 +174,10 @@ nav {                       /*-----------     nav    -----------*/
     font-size: 9px;
     text-align: center;
     color: #404040;
-    padding: 10px 0;
+    margin-top: 8.42px;
 }
 .btn-upgrade {
-    margin: 0 auto;
+    margin-top: 15.24px;
     width: 163.21px;
     height: 41.03px;
     background: #FFC145;
@@ -183,9 +187,54 @@ nav {                       /*-----------     nav    -----------*/
     font-size: 11px;
     color: #404040;
 }
+.btn-upgrade img {
+    display: inline;
+    width: 10px;
+    height: 9px;
+}
 
 main {                  /*-----------     main   -----------*/
     display: flex;
+}
+
+.single-slide {          /*-----------     slick single slider ext   -----------*/
+    display: flex;
+    justify-content: center;
+    width: 350.43px;
+    height: 226.17px;
+}
+.single-item {
+    width: 330.43px;
+    height: 226.17px;
+    border-radius: 26px;
+}
+.single-slide .prev {
+  position: absolute;
+  top: 100px;
+  left: -10px;
+  height: 23px;
+  width: 13px;
+  z-index: 1;
+  cursor: pointer;
+}
+.single-slide .next {
+  position: absolute;
+  top: 100px;
+  right: -10px;
+  height: 23px;
+  width: 13px;
+  z-index: 1;
+  cursor: pointer;
+}
+.slick-prev:before,
+.slick-next:before {
+  display: none;
+}
+.slick-prev,
+.slick-next {
+  width: 50px;
+  height: 50px;
+  z-index:5;
 }
 
 .cards {                /*-----------    cards   -----------*/
@@ -203,40 +252,32 @@ main {                  /*-----------     main   -----------*/
 }
 .card-wrapper {
     display: flex;
-    margin: 0 28px 0 17px;
+    margin: 0 28px 0 21.59px;
 }
-.card-content-left-upper,
-.card-content-left-lower {
-    display: flex;
+.card-content-left {
+    display: block;
 }
-.card-scroll-left {
-    width: 20px;
-    height: inherit;
+.card-content-right {
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
-    align-items: flex-start;
-}
-.card-scroll-right {
-    width: 30px;
-    height: inherit;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-}
-.card-content-left-upper > .card-scroll-right {
-    border-right: 1px solid #E8E8E8;
+    justify-content: space-between;
 }
 .card-item {
+    margin: 0 15px;
     width: 320.43px;
     height: 206.17px;
-    background: linear-gradient(180deg, #197BBD 0%, #3391D0 100%);
+    
     border-radius: 26px;
-    box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.12), 
+    box-shadow: 0px 8px 14px rgba(0, 0, 0, 0.12), 
                 0px 2px 6px rgba(0, 0, 0, 0.08), 
                 0px 0px 1px rgba(0, 0, 0, 0.04);
     position: relative;
+}
+[data-card-index="1"] {
+    background: linear-gradient(180deg, #197BBD 0%, #3391D0 100%);
+}
+[data-card-index="2"] {
+    background: linear-gradient(180deg, #19bd99 0%, #72d033 100%);
 }
 .card-item-wrapper {
     width: 80%;
@@ -288,7 +329,8 @@ main {                  /*-----------     main   -----------*/
 }
 .card-progress {
     width: 320px;
-    padding-top: 32px;
+    padding-top: 12px;
+    padding-left: 15px;
 }
 .card-limit {
     margin-top: 10.83px;
@@ -304,18 +346,16 @@ main {                  /*-----------     main   -----------*/
     font-weight: bold;
     color: #404040;
 }
-.card-content-right {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
-}
 .card-info {
     width: 170px;
+    height: 206px;
+    border-left: 1px solid #E8E8E8;
+    margin-left: 25.84px;
 }
 .cash-current {
     font-family: Lato;
     font-size: 31.55px;
-    font-weight: bold;
+    font-weight: 700;
     text-align: right;
     color: #197BBD;
 }
@@ -333,10 +373,6 @@ main {                  /*-----------     main   -----------*/
     text-align: right;
     color: #BB4430;
 }
-.cash-income:hover,
-.cash-outcome:hover {
-    font-size: 31.55px;
-}
 .card-info-text,
 .card-deactivate {
     display: block;
@@ -344,7 +380,7 @@ main {                  /*-----------     main   -----------*/
     color: #AEAEAE;
     text-align: right;
 }
-.card-info-data > .card-info-text {
+.card-info > .card-info-text {
     padding: 5px 0 30px 0;
 }
 .card-deactivate {
@@ -437,8 +473,25 @@ main {                  /*-----------     main   -----------*/
     text-align: right;
 }
 
+.multiple-items {               /*-------   slick multiple slider ext     -------*/
+    width: 513px;
+    height: 200px;
+    margin-left: -7px;
+    display: flex;
+    justify-content: center;
+}
+.multiple-items .next {
+    position: absolute;
+    top: 72px;
+    right: -25px;
+    height: 23px;
+    width: 13px;
+    z-index: 1;
+    cursor: pointer;
+}
+
 .goals {                    /*-------     goals     -------*/
-    width: 506.9px;
+    width: 530.14px;
     height: 222px;
     margin: 42.65px 0 0 32.26px;
 }
@@ -452,19 +505,16 @@ main {                  /*-----------     main   -----------*/
 .goals-header > img {
     width: 24px;
     height: 24px;
-} 
-.goals-wrapper {
-    display: flex;
-    justify-content: space-between;
 }
 .goal-item {
     width: 157.93px;
     height: 168.74px;
     background: #FFFFFF;
-    box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06), 
+    box-shadow: 0px 16px 18px rgba(0, 0, 0, 0.06), 
                 0px 2px 6px rgba(0, 0, 0, 0.04), 
                 0px 0px 1px rgba(0, 0, 0, 0.04);
     border-radius: 28px;
+    margin: 0 7px;
 }
 .goal-item-wrapper {
     width: 130px;
@@ -493,6 +543,14 @@ main {                  /*-----------     main   -----------*/
     font-family: Poppins;
     font-size: 20px;
     color: #404040;
+}
+.goals-wrapper > .card-scroll-right {
+    width: 13px;
+    height: 168.74px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .statistics {           /*-------     outcome statistics     -------*/
@@ -610,12 +668,9 @@ main {                  /*-----------     main   -----------*/
     margin: 9px;
 }
 .field-send-amount {
-    /* display: flex;
-    align-items: center;
-    align-content: center; */
+    display: flex;
     margin-left: 11.2px;
 }
-                                        /*to be correct*/
 #send-amount {
     width: 175.32px;
     height: 36.52px;
@@ -627,6 +682,7 @@ main {                  /*-----------     main   -----------*/
     font-style: normal;
     font-weight: 300;
     font-size: 24px;
+    color: #C7C7C7;
     line-height: 36px;
     text-align: center;
 }
@@ -637,7 +693,7 @@ main {                  /*-----------     main   -----------*/
     text-align: center;
     color: #197BBD;
 }
-.send-transfer {
+.btn-send-transfer {
     width: 131.59px;
     height: 36.52px;
     border: none;
@@ -651,25 +707,29 @@ main {                  /*-----------     main   -----------*/
     font-size: 11px;
     color: #404040;
 }
+.btn-send-transfer img {
+    display: inline;
+}
 
 .get-loan {                 /* -------------     get loan    ------------*/
     width: 157.93px;
     height: 183.03px;
     background: url(images/for-get-loan.svg) no-repeat, linear-gradient(180deg, #ED654C 0%, #D05842 100%);
-    box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.12), 
+    box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.24), 
                 0px 2px 6px rgba(0, 0, 0, 0.06), 
                 0px 0px 1px rgba(0, 0, 0, 0.04);
-    border-radius: 19.0044px;
+    border-radius: 19px;
     background-position: top -10px left -25px;
     display: flex;
     align-items: flex-end;
     margin: 42.74px 0 32.09px 0;
 }
-.get-loan :hover {                                                      /* to be corrected!!!!!!!!! FUUCK!*/
+.get-loan:hover {                                                      /* to be corrected!!!!!!!!! onclick!*/
     background: linear-gradient(180deg, #70BDF0 0%, #90C9EF 100%);
     box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
 }
-.get-loan > p {
+.get-loan > a {
     margin: 0 0 6.92px 16.05px;
     display: block;
     width: 99px;
@@ -679,87 +739,19 @@ main {                  /*-----------     main   -----------*/
     line-height: 25px;
     color: #FFFFFF;
 }
-
+.get-loan img {
+    display: inline;
+}
 
 /*----------------   MEDIA   -------------------*/
 
-@media (max-width: 767px) {
-
-    .cards {
-        margin-left: 10px;
-
-        width: 300px;
+@media (max-width: 1477px) {
+    .board {
+        width: 1140px;
         height: auto;
-        
     }
-    .cards-wrapper {
+    main {
         display: block;
     }
-    .card-item {
     
-        width: 210px;
-        height: 320px;
-    }
-
-    /*transactions*/
-
-    .transactions {
-        margin-left: 10px;
-
-        width: 300px;
-        height: auto;
-        
-    }
-    .transactions-row,
-    .transactions-header {
-        display: block;
-    }
-    .transactions-row > .amount {
-
-        text-align: left;
-    }
-    .transactions-wrapper {
-        padding-bottom: 25px;
-    }
-
-    /*goals*/
-    .goals {
-        margin-left: 10px;
-
-        width: 300px;
-    }
-
-    .goals-wrapper {
-        display: block;
-        
-    }
-    .goal-item {
-        margin: 0 auto;
-        margin-bottom: 14.45px;
-    }
-
-    /*statistics*/
-    .statistics {
-        margin-left: 10px;
-        width: 300px;
-
-    }
-    .statistics-item > .progress {
-        width: 175px;
-        height: 34.72px;
-    }
-
-    /*.new-transaction */
-    .new-transaction {
-        margin-left: 10px;
-        width: 300px;
-        
-    }
-   
-    .person-item {
-
-        padding: 0 15px;
-        /* opacity: 0.8; */
-    
-    }
 }
