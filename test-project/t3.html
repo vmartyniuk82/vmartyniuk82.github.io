@@ -8,45 +8,106 @@
 <body>
     
     <style>
-        body { 
+        /* #grid { 
           display: grid;
-          grid-template-areas: 
-            "header header header"
-            "nav article ads"
-            "footer footer footer";
-          grid-template-rows: 60px 1fr 60px;
-          grid-template-columns: 20% 1fr 15%;
-          grid-gap: 10px;
-          height: 100vh;
-          margin: 0;
+          width: 1000px;
+          grid-template-rows: 1fr 1fr 1fr;
+          grid-template-columns: 1fr 1fr 1fr;
+          grid-gap: 2vw;
+
+          margin: 0 auto;
           }
-        header, footer, article, nav, div {
-          padding: 20px;
+        #grid > div {
+          font-size: 5vw;
+          padding: .5em;
           background: gold;
+          text-align: center;
+        } */
+
+        .header {
+          display: flex;
+          flex-flow: wrap row;
+          align-items: center;
+          justify-content: space-between;
+          justify-content: flex-start;
+          
+          width: fit-content;
+          border: 1px solid #000;
         }
-        #pageHeader {
-          grid-area: header;
+        .wrapper {
+          display: flex;
+          flex-flow: wrap row;
         }
-        #pageFooter {
-          grid-area: footer;
+        .b1 {
+          width: 200px;
+          height: 100px;
+          background: lightpink;
         }
-        #mainArticle { 
-          grid-area: article;      
-          }
-        #mainNav { 
-          grid-area: nav; 
-          }
-        #siteAds { 
-          grid-area: ads; 
-          }
+        
+        .b2 {
+          width: 300px;
+          height: 100px;
+          background: rgb(182, 255, 221);
+        }
+        
+        .b3 {
+          width: 100px;
+          height: 100px;
+          background: rgb(189, 182, 255);
+        }
+        nav {
+          display: flex;
+          flex-flow: wrap column;
+        }
+        .main {
+          display: flex;
+          flex-flow: wrap row;
+          border: 1px solid #000;
+        }
+        main {
+          display: flex;
+          flex-flow: wrap row;
+          
+        }
+        .navig {
+          width: 200px;
+          height: 500px;
+          background: rgb(182, 255, 221);
+        }
+        .article {
+          width: 400px;
+          height: 600px;
+          background: lightpink;
+          border: 1px solid #000;
+        }
         </style>
-        <body>
-          <header id="pageHeader">Header</header>
-          <article id="mainArticle">Article</article>
-          <nav id="mainNav">Nav</nav>
-          <div id="siteAds">Ads</div>
-          <footer id="pageFooter">Footer</footer>
+        <!-- <div id="grid">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>7</div>
+          <div>8</div>
+          <div>9</div>
+        </div> -->
 
-
+        <div class="header">
+            <div class="wrapper">
+              <div class="b1"></div>
+              <div class="b2"></div>
+            </div>
+            <div class="b3"></div>
+        </div>
+        <div class="main">
+            <nav>
+              <div class="navig"></div>
+            </nav>
+            <main>
+                <div class="article"></div>
+                <div class="article"></div>
+            </main>
+        </div>
 </body>
 </html>

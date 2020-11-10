@@ -18,6 +18,7 @@ p {
     line-height: 1;
 }
 h1 {
+    width: 430px;
     height: 54.85px;
     font-family: Poppins-SemiBold;
     font-size: 43px;
@@ -44,10 +45,11 @@ img {
     background: #F1F1F1;
 }
 .progress-bar-inner {
-    width: 10%;
+    width: 0%;
     height: 10px;
     border-radius: 11px;
     background: #197BBD;
+    transition: width 2s;
 }
 
 .dashboard {                                /*-------  body  -------*/
@@ -57,7 +59,7 @@ img {
 }
 .board {
     width: 1476.59px;
-    height: 903.5px;
+    height: 903.5px; 
     background: linear-gradient(121.32deg, #FFFFFF 10.96%, #FFFFFF 72%, #FFFFFF 99.98%);
     box-shadow: 0px 24px 32px rgba(0, 0, 0, 0.04), 
                 0px 16px 24px rgba(0, 0, 0, 0.04), 
@@ -69,20 +71,23 @@ img {
 }
 
 header {                        /*-----------     header    -----------*/
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-between;
     padding-top: 33.94px;
     margin-left: 40.54px;
-    display: flex;
-    justify-content: space-between;
 }
 .board-name {
     display: flex;
+    flex-flow: wrap row;
 }
 .logo {
+    width: 210px;
+    height: 74px;
+    border-right: 2px solid #F8F8F8;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    width: 210px;
-    border-right: 2px solid #F8F8F8;
 }
 .logo > p {
     display: block;
@@ -92,7 +97,9 @@ header {                        /*-----------     header    -----------*/
     color: #0F4264;
 }
 .title {
-    margin-left: 45px;
+    width: 430px;
+    height: 74px;
+    margin-left: 45px;  
 }
 .title > p {
     font-family: Poppins;
@@ -100,10 +107,12 @@ header {                        /*-----------     header    -----------*/
     color: #AEAEAE;
 }
 .account {
+    width: 265px;
+    height: 74px;
     display: flex;
     justify-items: center;
     align-items: center;
-    margin-right: 43.23px;
+    margin-right: 47.44px;
 }
 .account > img {
     display: block;
@@ -128,8 +137,14 @@ header {                        /*-----------     header    -----------*/
 nav {                       /*-----------     nav    -----------*/
     width: 210px;
     margin-left: 40.54px;
+    margin-bottom: 32.09px;
     border-right: 2px solid #F8F8F8;
     padding-top: 55.78px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    flex-shrink: 0;
 }
 .nav-item {
     width: 165px;
@@ -162,8 +177,6 @@ nav {                       /*-----------     nav    -----------*/
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-    margin-top: 275.5px;
 }
 .nav-upgrade img {
     width: 71.11px;
@@ -195,6 +208,7 @@ nav {                       /*-----------     nav    -----------*/
 
 main {                  /*-----------     main   -----------*/
     display: flex;
+    flex-flow: wrap row;
 }
 
 .single-slide {          /*-----------     slick single slider ext   -----------*/
@@ -332,6 +346,9 @@ main {                  /*-----------     main   -----------*/
     padding-top: 12px;
     padding-left: 15px;
 }
+.progress-bar-inner {
+    width: 25%;
+}
 .card-limit {
     margin-top: 10.83px;
     display: flex;
@@ -401,7 +418,7 @@ main {                  /*-----------     main   -----------*/
     border-radius: 13.617px;
 }
 
-.transactions {                 /*-----------     transactions     -----------*/
+.transactions {                 /*-----------     transactions history    -----------*/
     width: 596.66px;
     height: 322.38px;
     background: #FFFFFF;
@@ -409,8 +426,7 @@ main {                  /*-----------     main   -----------*/
                 0px 2px 6px rgba(0, 0, 0, 0.04), 
                 0px 0px 1px rgba(0, 0, 0, 0.04);
     border-radius: 19.0044px;
-    margin-left: 45px;
-    margin-bottom: 32.09px;
+    margin: 0 0 32.09px 45px;
 }
 .transactions h2 {
     padding: 18.4px 0 18.4px 24.64px;
@@ -563,13 +579,13 @@ main {                  /*-----------     main   -----------*/
 }
 .statistics-item {
     height: 50.17px;
-    margin-bottom: 16.58px;    
+    margin-bottom: 16.58px;
     display: flex;
 }
 .statistics-item > img {
     width: 24px;
     height: 24px;
-    box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06), 
+    box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06),
     0px 2px 6px rgba(0, 0, 0, 0.04), 
     0px 0px 1px rgba(0, 0, 0, 0.04);
     padding: 9px 9px 10px 9px;
@@ -745,13 +761,339 @@ main {                  /*-----------     main   -----------*/
 
 /*----------------   MEDIA   -------------------*/
 
-@media (max-width: 1477px) {
+@media (min-width: 992px) and (max-width: 1476px) {
     .board {
-        width: 1140px;
+        width: 992px;
         height: auto;
     }
+    .logo {
+        width: 100px;
+        flex-flow: column wrap;
+        align-items: center;
+        justify-content: center;
+        border-right: none;
+    }
+    nav {
+        margin-top: 55.78px;
+        padding-top: 0;
+    }
+    .cards {
+        margin-bottom: 30px;
+    }
+    .transactions,
+    .goals,
+    .statistics,
+    .new-transaction {
+        margin: 0 0 30px 45px;
+    }
+    .new-transaction-wrapper {
+        margin: 0 14.45px 0 0;
+    }
+    .get-loan {
+        margin: 0;
+    }
+    .goals {
+        width: 574px;
+    }
+    .goal-item {
+        margin: 0 17px;
+    }
+    .multiple-items {
+        width: 100%;
+        height: 200px;
+        margin-left: -17px;
+        display: flex;
+        justify-content: center;
+    }
+    .statistics {
+        width: 597px;
+    }
+    .statistics-item .progress-bar {
+        width: 80%; 
+    }
+    .new-transaction {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 640px) and (max-width: 991px) {
+    .board {
+        width: 640px;
+        height: auto;
+    }
+    .board-content {
+        display: flex;
+        flex-flow: row wrap;
+    }
+    .board-name {
+        display: flex;
+        flex-flow: wrap row;
+        justify-content: flex-start;
+    }
+    .logo {
+        width: 100px;
+        flex-flow: column wrap;
+        align-items: center;
+        justify-content: center;
+        border-right: none;
+    }
+    .title {
+        margin-left: 25px;
+    }
+    .account {
+        margin-left: 280px;
+        margin-right: 0;
+    }
+    nav {
+        width: 580px;
+        margin: 0 30px;
+        border-right: none;
+        padding-top: 0;
+        margin-bottom: 0;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+    .nav-upgrade {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .cards,
+    .transactions,
+    .goals,
+    .statistics {
+        margin: 30px 0 35px 20px;
+    }
+    .goals {
+        width: 574px;
+        margin: 0 0 35px 20px;
+    }
+    .goal-item {
+        margin: 0 17px;
+    }
+    .multiple-items {
+        width: 100%;
+        height: 200px;
+        margin-left: -17px;
+        display: flex;
+        justify-content: center;
+    }
+    .statistics {
+        width: 597px;
+    }
+    .statistics-item .progress-bar {
+        width: 80%; 
+    }
+    .new-transaction {
+        display: flex;
+        justify-content: space-between;
+    }
+    .new-transaction-wrapper {
+        margin: 0 14.45px 0 20px;
+    }
+    .get-loan {
+        margin: 0 0 32.09px 0;
+    }
+}
+@media (max-width: 639px) {
+    .board {
+        width: 320px;
+        height: auto;
+    }
+    .board-content {
+        display: flex;
+        flex-flow: row wrap;
+    }
+    header {
+        padding-top: 30px;
+        margin-left: 0;
+    }
+    .board-name {
+        display: flex;
+        flex-flow: wrap row;
+        justify-content: flex-start;
+    }
+    .logo {
+        width: 280px;
+        flex-flow: column wrap;
+        align-items: center;
+        justify-content: center;
+        border-right: none;
+        margin: 0 20px;
+    }
+    .title {
+        width: 280px;
+        height: 180px;
+        margin: 0 20px;
+    }
+    .title p {
+        margin: 0;
+        text-align: center;
+        padding-bottom: 15px;
+    }
+    h1 {
+        width: 280px;
+        height: 115px;
+        text-align: center;
+        margin-bottom: 5px;
+        margin: 0;
+    }
+    .account {
+        width: 280px;
+        margin: 0 20px;
+        border-top: 2px solid #F8F8F8;
+        border-bottom: 2px solid #F8F8F8;
+    }
+    nav {
+        width: 280px;
+        margin: 0 10px;
+        border-right: none;
+        padding-top: 0;
+        margin-bottom: 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+    }
+    .nav-upgrade {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+    }
     main {
+        width: 300px;
+    }
+    .cards,
+    .transactions,
+    .goals,
+    .statistics {
+        width: 280px;
+        height: auto;
+        margin: 30px 0 35px 20px;
+    }
+    .cards {
+        width: 280px;
+        height: auto;
+
+        margin: 30px 20px;
+    }
+    .card-wrapper {
+        display: block;
+        margin: 0 28px 0 21.59px;
+    }
+
+    .card-item {
+        margin: 0 15px;
+        width: 220px;
+        height: 300px;
+
+    }
+
+
+    .single-slide {
+        display: flex;
+        justify-content: center;
+        width: 240px;
+        height: 320px;
+    }
+    .card-progress {
+        width: 250px;
+}
+    .progress-bar {
+        width: 200px;
+        height: 10px;
+        border-radius: 14px;
+        background: #F1F1F1;
+    }
+    .card-limit {
+        margin-top: 10.83px;
         display: block;
     }
-    
+    .card-limit p {
+    padding-bottom: 10px;
+    }
+    .card-info {
+        width: 210px;
+        height: 206px;
+        border-left: none;
+        border-top: 2px solid #F8F8F8;
+        padding-top: 10px;
+        margin: 20px;
+    }
+    .card-deactivate {
+        margin: 20px 0;
+    }
+    .transactions-header {
+        display: block;
+        text-align: left;
+    }
+    .transactions-header p,
+    .transactions-row p {
+        margin: 10px 0;
+        text-align: left;
+    }
+    .transactions-header .amount,
+    .transactions-row .amount {
+        text-align: left;
+    }
+    .transactions-row {
+        display: block;
+        height: 150px;
+        padding-top: 20px;
+        border-top: 0.5px solid #ECECEC;
+        border-bottom: 0.5px solid #ECECEC;
+    }
+    .column-right {
+        width: 280px;
+    }
+    .goals {
+        width: 280px;
+        margin: 0 0 35px 20px;
+    }
+    .goal-item {
+        margin: 0 17px;
+    }
+    .multiple-items {
+        width: 280px;
+        height: 200px;
+        margin-left: -17px;
+        display: flex;
+        justify-content: center;
+    }
+    .statistics {
+        width: 280px;
+    }
+    .statistics-item .progress-bar {
+        width: 160px; 
+    }
+    .new-transaction {
+        width: 280px;
+        display: block;
+        justify-content: space-between;
+    }
+    .new-transaction-wrapper {
+        width: 280px;
+        height: 300px;
+        margin: 0 0 0 20px;
+    }
+    .field-send-amount {
+        display: block;
+        margin-left: 11.2px;
+    }
+    .btn-send-transfer {
+        margin: 20px 0;
+    }
+    .get-loan {
+        width: 157.93px;
+        height: 183.03px;
+        margin: 30px 0 30px 85px;
+    }
 }
