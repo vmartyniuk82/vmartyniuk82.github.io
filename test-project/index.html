@@ -7,10 +7,8 @@
     <link rel="stylesheet" type="text/css" href="slider/slick-1.8.1/slick/slick-theme.css"/>
     <script type="text/javascript" src="jquery-3.5.1.min.js"></script>
     <script type="text/javascript" src="slider/slick-1.8.1/slick/slick.min.js"></script>
-    
     <link rel="stylesheet" href="style.css">
-    
-    <title>Document</title>
+    <title>Cloudcash</title>        <!-- FAVICON -->
 </head>
 <body class="dashboard">    <!-- background -->
     <div class="board">         <!-- board-content -->
@@ -76,10 +74,10 @@
                         <div class="card-wrapper">
                             <div class="card-content-left">
                                 <div class="single-slide">      <!-- slick slider -->
-                                    <div data-card-index="1" class="card-item">
+                                    <div data-card-item="1" class="card-item">
                                         <div class="card-item-wrapper">
                                             <p class="card-brand">cloudcash</p>   
-                                            <p class="card-type">PREMIUM ACCOUNT 1</p>
+                                            <p class="card-type">PREMIUM ACCOUNT</p>
                                             <p class="card-number">5789 &nbsp;&nbsp;* * * * &nbsp;&nbsp; * * * * &nbsp;&nbsp;2847</p>
                                             <div class="card-data-table">
                                                 <div class="card-row">
@@ -94,10 +92,10 @@
                                         </div>
                                         <img src="images/card-design.svg" alt="card-design">
                                     </div>
-                                    <div data-card-index="2"  class="card-item">
+                                    <div data-card-item="2" class="card-item">
                                         <div class="card-item-wrapper">
                                             <p class="card-brand">cloudcash</p>   
-                                            <p class="card-type">PREMIUM ACCOUNT 2</p>
+                                            <p class="card-type">PREMIUM ACCOUNT</p>
                                             <p class="card-number">3413 &nbsp;&nbsp;* * * * &nbsp;&nbsp; * * * * &nbsp;&nbsp;9354</p>
                                             <div class="card-data-table">
                                                 <div class="card-row">
@@ -115,11 +113,11 @@
                                 </div>
                                 <div class="card-progress">
                                     <div class="progress-bar">
-                                        <div class="progress-bar-inner"></div>
+                                        <div data-card-progress class="progress-bar-inner"></div>
                                     </div>
                                     <div class="card-limit">
                                         <p>Weekly payment limit</p>
-                                        <p>$350.60 / $4000</p>
+                                        <p data-card-limit-value>$350.60 / $4000</p>
                                     </div>
                                 </div>
                             </div>
@@ -239,29 +237,29 @@
                     </div>
                     <div class="statistics">            <!-- outcome statistics -->
                         <h2>Outcome statistics</h2>
-                        <div id="statistics-shopping" class="statistics-item">
+                        <div data-statistics="1" class="statistics-item">
                             <img src="images/stat-shopping.svg" alt="statistics-shopping">
                             <div class="progress-bar">
                                 <div class="progress-bar-inner"></div>
                                 <p>Shopping</p>
                             </div>
-                            <p class="statistics-percent">52%</p>
+                            <p data-statistics-percent="1" class="statistics-percent">52%</p>
                         </div>
-                        <div id="statistics-electronics" class="statistics-item">
+                        <div data-statistics="2" class="statistics-item">
                             <img src="images/stat-electronics.svg" alt="statistics-electronics">
                             <div class="progress-bar">
-                                <div id="xxxx1" class="progress-bar-inner"></div>
+                                <div class="progress-bar-inner"></div>
                                 <p>Electronics</p>
                             </div>
-                            <p id="yyyy1" class="statistics-percent">21%</p>
+                            <p data-statistics-percent="2" class="statistics-percent">21%</p>
                         </div>
-                        <div id="statistics-travels" class="statistics-item">
+                        <div data-statistics="3" class="statistics-item">
                             <img src="images/stat-travels.svg" alt="statistics-travels">
                             <div class="progress-bar">
                                 <div class="progress-bar-inner"></div>
                                 <p>Travels</p>
                             </div>
-                            <p class="statistics-percent">74%</p>
+                            <p data-statistics-percent="3" class="statistics-percent">74%</p>
                         </div>
                     </div>
                     <div class="new-transaction">       <!--    new transaction     -->

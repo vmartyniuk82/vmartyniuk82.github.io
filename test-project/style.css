@@ -53,8 +53,6 @@ img {
 }
 
 .dashboard {                                /*-------  body  -------*/
-    /* width: 100vw;
-    height: 100vh; */
     background: linear-gradient(180deg, #E6E6E6 0%, rgba(240, 240, 240, 0) 100%);
 }
 .board {
@@ -287,10 +285,10 @@ main {                  /*-----------     main   -----------*/
                 0px 0px 1px rgba(0, 0, 0, 0.04);
     position: relative;
 }
-[data-card-index="1"] {
+[data-card-item="1"] {
     background: linear-gradient(180deg, #197BBD 0%, #3391D0 100%);
 }
-[data-card-index="2"] {
+[data-card-item="2"] {
     background: linear-gradient(180deg, #19bd99 0%, #72d033 100%);
 }
 .card-item-wrapper {
@@ -347,7 +345,7 @@ main {                  /*-----------     main   -----------*/
     padding-left: 15px;
 }
 .progress-bar-inner {
-    width: 25%;
+    width: 1%;
 }
 .card-limit {
     margin-top: 10.83px;
@@ -375,6 +373,9 @@ main {                  /*-----------     main   -----------*/
     font-weight: 700;
     text-align: right;
     color: #197BBD;
+}
+.cash-current::first-letter {
+    font-size: 18px;
 }
 .cash-income {
     font-family: Lato;
@@ -592,26 +593,26 @@ main {                  /*-----------     main   -----------*/
     border-radius: 3px;
     margin: 6.73px 15px 0 0;
 }
-#statistics-shopping img {
+[data-statistics="1"] img {
     background: #FFEADA;
     padding: 9px 12px 10px 6px;
 }
-#statistics-electronics img {
+[data-statistics="2"] img {
     background: #DDF9E4;
 }
-#statistics-travels img  {
+[data-statistics="3"] img  {
     background: #E4F0FF;
 }
-#statistics-shopping .progress-bar-inner {
-    width: 52%;
+[data-statistics="1"] .progress-bar-inner {
+    width: 1%;
     background: linear-gradient(270deg, #FCAE73 0%, #F79042 99.18%);
 }
-#statistics-electronics .progress-bar-inner {
-    width: 21%;
+[data-statistics="2"] .progress-bar-inner {
+    width: 1%;
     background: linear-gradient(90deg, #209D43 0%, #2BC255 100%);
 }
-#statistics-travel .progress-bar-inner {
-    width: 74%;
+[data-statistics="3"] .progress-bar-inner {
+    width: 1%;
     background: linear-gradient(90deg, #4E96EE 0%, #2779dd 100%);
 }
 .statistics-item .progress-bar {
@@ -956,7 +957,6 @@ main {                  /*-----------     main   -----------*/
         display: flex;
         justify-content: space-between;
     }
-
     .nav-links {
         display: flex;
         flex-flow: column nowrap;
@@ -989,15 +989,15 @@ main {                  /*-----------     main   -----------*/
         display: block;
         margin: 0 28px 0 21.59px;
     }
-
     .card-item {
         margin: 0 15px;
         width: 220px;
         height: 300px;
-
     }
-
-
+    .card-number {
+        width: 180px;
+        padding-bottom: 80px;
+    }
     .single-slide {
         display: flex;
         justify-content: center;
@@ -1059,10 +1059,11 @@ main {                  /*-----------     main   -----------*/
         margin: 0 0 35px 20px;
     }
     .goal-item {
+        width: 158px;
         margin: 0 17px;
     }
     .multiple-items {
-        width: 280px;
+        width: 200px;
         height: 200px;
         margin-left: -17px;
         display: flex;
