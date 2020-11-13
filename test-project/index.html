@@ -151,7 +151,7 @@
                         <div class="card-wrapper">
                             <div class="card-content-left">
                                 <div class="single-slide">
-                                    <div data-card-item="1" class="card-item">
+                                    <div id="card-item-1" class="card-item">
                                         <div class="card-item-wrapper">
                                             <p class="card-brand">cloudcash</p>   
                                             <p class="card-type">PREMIUM ACCOUNT</p>
@@ -169,7 +169,7 @@
                                         </div>
                                         <img src="images/card-design.svg" alt="card-design">
                                     </div>
-                                    <div data-card-item="2" class="card-item">
+                                    <div id="card-item-2" class="card-item">
                                         <div class="card-item-wrapper">
                                             <p class="card-brand">cloudcash</p>   
                                             <p class="card-type">PREMIUM ACCOUNT</p>
@@ -190,11 +190,11 @@
                                 </div>
                                 <div class="card-progress">
                                     <div class="progress-bar">
-                                        <div data-card-progress class="progress-bar-inner"></div>
+                                        <div id="card-progress-bar-inner" class="progress-bar-inner"></div>
                                     </div>
                                     <div class="card-limit">
                                         <p>Weekly payment limit</p>
-                                        <p data-card-limit-value>$350.60 / $4000</p>
+                                        <p id="card-limit">$350.60 / $4000</p>
                                     </div>
                                 </div>
                             </div>
@@ -225,35 +225,35 @@
                                 <p class="date">Date</p>
                                 <p class="amount">Amount</p>
                             </div>
-                            <div class="transactions-row">
+                            <div id="transactions-row-1" class="transactions-row">
                                 <img src="images/history-shopping.svg" alt="history-shopping">
                                 <p class="receiver">Tesco Market</p>
                                 <p class="type">Shopping</p>
                                 <p class="date">23 Dec 2020</p>
                                 <p class="amount">$75.67</p>
                             </div>
-                            <div class="transactions-row">
+                            <div id="transactions-row-2" class="transactions-row">
                                 <img src="images/history-car.svg" alt="history-car">
                                 <p class="receiver">ElectroMen Market</p>
                                 <p class="type">Shopping</p>
                                 <p class="date">14 Dec 2020</p>
                                 <p class="amount">$250.00</p>
                             </div>
-                            <div class="transactions-row">
+                            <div id="transactions-row-3" class="transactions-row">
                                 <img src="images/history-food.svg" alt="history-food">
                                 <p class="receiver">Fiorgio Restaurant</p>
                                 <p class="type">Food</p>
                                 <p class="date">07 Dec 2020</p>
                                 <p class="amount">$19.50</p>
                             </div>
-                            <div class="transactions-row">
+                            <div id="transactions-row-4" class="transactions-row">
                                 <img src="images/history-person.svg" alt="history-person">
                                 <p class="receiver">John Mathew Kayne</p>
                                 <p class="type">Sport</p>
                                 <p class="date">06 Dec 2020</p>
                                 <p class="amount">$350.00</p>
                             </div>
-                            <div class="transactions-row">
+                            <div id="transactions-row-5" class="transactions-row">
                                 <img src="images/history-person.svg" alt="history-person">
                                 <p class="receiver">Ann Marlin</p>
                                 <p class="type">Shopping</p>
@@ -270,7 +270,7 @@
                             <img src="images/plus-circle.svg" alt="picture Add new">
                         </div>
                         <div class="multiple-items">
-                            <div class="goal-item">
+                            <div id="goal-item-1" class="goal-item">
                                 <div class="goal-item-wrapper">
                                     <p class="goal-amount">$550.00</p>
                                     <p class="goal-date">12/20/20</p>
@@ -278,7 +278,7 @@
                                     <p class="goal-name">Holidays</p>
                                 </div>
                             </div>
-                            <div class="goal-item">
+                            <div id="goal-item-2" class="goal-item">
                                 <div class="goal-item-wrapper">
                                     <p class="goal-amount">$200.00</p>
                                     <p class="goal-date">12/20/20</p>
@@ -286,7 +286,7 @@
                                     <p class="goal-name">Renovation</p>
                                 </div>   
                             </div>
-                            <div class="goal-item">
+                            <div id="goal-item-3" class="goal-item">
                                 <div class="goal-item-wrapper">
                                     <p class="goal-amount">$820.00</p>
                                     <p class="goal-date">12/20/20</p>
@@ -294,7 +294,7 @@
                                     <p class="goal-name">Xbox</p>
                                 </div>
                             </div>
-                             <div class="goal-item">
+                             <div id="goal-item-4" class="goal-item">
                                 <div class="goal-item-wrapper">
                                     <p class="goal-amount">$200.00</p>
                                     <p class="goal-date">12/20/20</p>
@@ -302,7 +302,7 @@
                                     <p class="goal-name">Renovation</p>
                                 </div>   
                             </div>
-                            <div class="goal-item">
+                            <div id="goal-item-5" class="goal-item">
                                 <div class="goal-item-wrapper">
                                     <p class="goal-amount">$820.00</p>
                                     <p class="goal-date">12/20/20</p>
@@ -314,29 +314,29 @@
                     </div>
                     <div class="statistics">
                         <h2>Outcome statistics</h2>
-                        <div data-statistics="1" class="statistics-item">
+                        <div id="statistics-item-1" class="statistics-item">
                             <img src="images/stat-shopping.svg" alt="statistics-shopping">
                             <div class="progress-bar">
                                 <div class="progress-bar-inner"></div>
                                 <p>Shopping</p>
                             </div>
-                            <p data-statistics-percent="1" class="statistics-percent">52%</p>
+                            <p class="statistics-percent">52%</p>
                         </div>
-                        <div data-statistics="2" class="statistics-item">
+                        <div id="statistics-item-2" class="statistics-item">
                             <img src="images/stat-electronics.svg" alt="statistics-electronics">
                             <div class="progress-bar">
                                 <div class="progress-bar-inner"></div>
                                 <p>Electronics</p>
                             </div>
-                            <p data-statistics-percent="2" class="statistics-percent">21%</p>
+                            <p class="statistics-percent">21%</p>
                         </div>
-                        <div data-statistics="3" class="statistics-item">
+                        <div id="statistics-item-3" class="statistics-item">
                             <img src="images/stat-travels.svg" alt="statistics-travels">
                             <div class="progress-bar">
                                 <div class="progress-bar-inner"></div>
                                 <p>Travels</p>
                             </div>
-                            <p data-statistics-percent="3" class="statistics-percent">74%</p>
+                            <p class="statistics-percent">74%</p>
                         </div>
                     </div>
                     <div class="new-transaction">

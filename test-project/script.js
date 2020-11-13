@@ -56,17 +56,18 @@ const arr = [
         cardLimit: '4000.00',
         cardDeact: false,
         transactions: [
-            {receiver: 'Tesco Market', type: 'Shopping', date: '23 Dec 2020', amount: '$75.67'},
             {receiver: 'ElectroMen Market', type: 'Shopping', date: '14 Dec 2020', amount: '$250.00'},
-            {receiver: 'Fiorgio Restaurant', type: 'Food', date: '07 Dec 2020', amount: '$19.50'},
-            {receiver: 'Tesco Market', type: 'Sport', date: '06 Dec 2020', amount: '$350.00'}
+            {receiver: 'Tesco Market', type: 'Sport', date: '06 Dec 2020', amount: '$350.00'},
+            {receiver: 'Tesco Market', type: 'Shopping', date: '23 Dec 2020', amount: '$75.67'},
+            {receiver: 'Fiorgio Restaurant', type: 'Food', date: '07 Dec 2020', amount: '$19.50'}
+            
         ],
         goals: [
-            {amount: '$550.00', date: '12/20/20', goal: 'Holidays'},
-            {amount: '$200.00', date: '12/20/20', goal: 'Renovation'},
-            {amount: '$820.00', date: '12/20/20', goal: 'Xbox'},
-            {amount: '$1430.00', date: '12/20/20', goal: 'Renovation'},
-            {amount: '$935.00', date: '12/20/20', goal: 'Xbox'},
+            {amount: '$2333.00', date: '12/20/20', goal: 'Holidays'},
+            {amount: '$500.00', date: '12/20/20', goal: 'Renovation'},
+            {amount: '$999.00', date: '12/20/20', goal: 'PS5'},
+            {amount: '$430.00', date: '12/20/20', goal: 'Renovation'},
+            {amount: '$80.00', date: '12/20/20', goal: 'DOOM game'},
         ],
         statistics: [30, 85, 45]
     }
@@ -81,14 +82,14 @@ $('.single-slide').on('afterChange', function(event, slick, currentSlide, nextSl
 
 /* card */
 function fillCardData (i) {
-    let cardNubmber = document.querySelector('[data-card-item="' + (i + 1) + '"] .card-holder');
-    let cardHolder = document.querySelector('[data-card-item="' + (i + 1) + '"] .card-holder');
-    let cardExpire = document.querySelector('[data-card-item="' + (i + 1) + '"] .card-expire');
+    let cardNubmber = document.querySelector('#card-item-' + (i + 1) + ' .card-holder');
+    let cardHolder = document.querySelector('#card-item-' + (i + 1) + ' .card-holder');
+    let cardExpire = document.querySelector('#card-item-' + (i + 1) + ' .card-expire');
     let cardBalance = document.querySelector('.cash-current');
     let cardIncome = document.querySelector('.cash-income');
     let cardOutcome = document.querySelector('.cash-outcome');
-    let cardLimit = document.querySelector('[data-card-limit-value]');
-    let cardProgress = document.querySelector('[data-card-progress]');
+    let cardLimit = document.querySelector('#card-limit');
+    let cardProgress = document.querySelector('#card-progress-bar-inner');
     cardNubmber.innerHTML = arr[i].cardNubmber;
     cardHolder.innerHTML = arr[i].cardHolder;
     cardExpire.innerHTML = arr[i].cardExpire;
@@ -97,14 +98,36 @@ function fillCardData (i) {
     cardOutcome.innerHTML = '$ ' + arr[i].cardOutcome;
     cardLimit.innerHTML = '$' + arr[i].cardOutcome + ' /$' + arr[i].cardLimit;
     cardProgress.style.width = Number(arr[i].cardOutcome)/Number(arr[i].cardLimit) * 100 + '%';
-    
+
+    /* transactions  */
+    for (let j = 0; j < 4; j++) {
+        let transactionReceiver = document.querySelector('#transactions-row-' + (j + 1) + ' .receiver');
+        let transactionType = document.querySelector('#transactions-row-' + (j + 1) + ' .type');
+        let transactionDate = document.querySelector('#transactions-row-' + (j + 1) + ' .date');
+        let transactionAmount = document.querySelector('#transactions-row-' + (j + 1) + ' .amount');
+        transactionReceiver.innerHTML = arr[i].transactions[j].receiver;
+        transactionType.innerHTML = arr[i].transactions[j].type;
+        transactionDate.innerHTML = arr[i].transactions[j].date;
+        transactionAmount.innerHTML = arr[i].transactions[j].amount;
+    }
+
+    /* goals */
+    for (let k = 0; k < 5; k++) {
+    let goalAmount = document.querySelector('#goal-item-' + (k + 1) + ' .goal-amount');
+    let goalDate = document.querySelector('#goal-item-' + (k + 1) + ' .goal-date');
+    let goalName = document.querySelector('#goal-item-' + (k + 1) + ' .goal-name');
+    goalAmount.innerHTML = arr[i].goals[k].amount;
+    goalDate.innerHTML = arr[i].goals[k].date;
+    goalName.innerHTML = arr[i].goals[k].goal;
+    }
+
     /* statistics  */
-    let statProgress1 = document.querySelector('[data-statistics="1"] .progress-bar-inner');
-    let statProgress2 = document.querySelector('[data-statistics="2"] .progress-bar-inner');
-    let statProgress3 = document.querySelector('[data-statistics="3"] .progress-bar-inner');
-    let statPercent1 = document.querySelector('[data-statistics-percent="1"]');
-    let statPercent2 = document.querySelector('[data-statistics-percent="2"]');
-    let statPercent3 = document.querySelector('[data-statistics-percent="3"]');
+    let statProgress1 = document.querySelector('#statistics-item-1 .progress-bar-inner');
+    let statProgress2 = document.querySelector('#statistics-item-2 .progress-bar-inner');
+    let statProgress3 = document.querySelector('#statistics-item-3 .progress-bar-inner');
+    let statPercent1 = document.querySelector('#statistics-item-1 .statistics-percent');
+    let statPercent2 = document.querySelector('#statistics-item-2 .statistics-percent');
+    let statPercent3 = document.querySelector('#statistics-item-3 .statistics-percent');
     statProgress1.style.width = arr[i].statistics[0] + '%';
     statProgress2.style.width = arr[i].statistics[1] + '%';
     statProgress3.style.width = arr[i].statistics[2] + '%';
