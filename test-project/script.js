@@ -82,7 +82,7 @@ $('.single-slide').on('afterChange', function(event, slick, currentSlide, nextSl
 
 /* card */
 function fillCardData (i) {
-    let cardNubmber = document.querySelector('#card-item-' + (i + 1) + ' .card-holder');
+    let cardNubmber = document.querySelector('#card-item-' + (i + 1) + ' .card-number');
     let cardHolder = document.querySelector('#card-item-' + (i + 1) + ' .card-holder');
     let cardExpire = document.querySelector('#card-item-' + (i + 1) + ' .card-expire');
     let cardBalance = document.querySelector('.cash-current');
