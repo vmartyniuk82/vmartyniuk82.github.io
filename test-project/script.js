@@ -1,4 +1,4 @@
-/* --- slick section --- */
+// --- slick section --- 
 $('.single-slide').slick({
     infinite: true,
     prevArrow: "<img src='images/arr-left.svg' class='prev' alt='1'>",
@@ -18,7 +18,7 @@ $('.multiple-items').slick({
         }
     }]
 });
-/* --- cards array --- */
+// --- cards array --- 
 const arr = [
     {
         cardId: 1,
@@ -71,7 +71,8 @@ const arr = [
         statistics: [30, 85, 45]
     }
 ]
-/*  -------------------------------  */
+
+//  -------------------------------
 fillCardData (0);
 
 $('.single-slide').on('afterChange', function(event, slick, currentSlide, nextSlide){
@@ -110,5 +111,113 @@ function fillCardData (i) {
     statPercent1.innerHTML = arr[i].statistics[0] + '%';
     statPercent2.innerHTML = arr[i].statistics[1] + '%';
     statPercent3.innerHTML = arr[i].statistics[2] + '%';
-}
+};
 
+let navOverview = document.querySelector('#nav-item-overview');
+let navTransactions = document.querySelector('#nav-item-transactions');
+let navCards = document.querySelector('#nav-item-cards');
+let navInvoices = document.querySelector('#nav-item-invoices');
+let navGoals = document.querySelector('#nav-item-goals');
+let navSettings = document.querySelector('#nav-item-settings');
+
+navOverview.addEventListener('mouseover', function () {
+    let p = document.querySelector('#nav-item-overview a');
+    let svg = document.querySelector('#nav-item-overview svg');
+    navOverview.style.background = '#F0F7FF';
+    p.style.color = '#197BBD';
+    svg.style.stroke =  '#197BBD';
+});
+navOverview.addEventListener('mouseout', function () {
+    let p = document.querySelector('#nav-item-overview a');
+    let svg = document.querySelector('#nav-item-overview svg');
+    navOverview.style.background = 'none';
+    p.style.color = '#C7C7C7';
+    svg.style.stroke =  '#C7C7C7';
+});
+navTransactions.addEventListener('mouseover', function () {
+    let p = document.querySelector('#nav-item-transactions a');
+    let svg = document.querySelector('#nav-item-transactions svg');
+    navTransactions.style.background = '#F0F7FF';
+    p.style.color = '#197BBD';
+    svg.style.stroke =  '#197BBD';
+});
+navTransactions.addEventListener('mouseout', function () {
+    let p = document.querySelector('#nav-item-transactions a');
+    let svg = document.querySelector('#nav-item-transactions svg');
+    navTransactions.style.background = 'none';
+    p.style.color = '#C7C7C7';
+    svg.style.stroke =  '#C7C7C7';
+});
+navCards.addEventListener('mouseover', function () {
+    let p = document.querySelector('#nav-item-cards a');
+    let svg = document.querySelector('#nav-item-cards svg');
+    navCards.style.background = '#F0F7FF';
+    p.style.color = '#197BBD';
+    svg.style.stroke =  '#197BBD';
+});
+navCards.addEventListener('mouseout', function () {
+    let p = document.querySelector('#nav-item-cards a');
+    let svg = document.querySelector('#nav-item-cards svg');
+    navCards.style.background = 'none';
+    p.style.color = '#C7C7C7';
+    svg.style.stroke =  '#C7C7C7';
+});
+navInvoices.addEventListener('mouseover', function () {
+    let p = document.querySelector('#nav-item-invoices a');
+    let svg = document.querySelector('#nav-item-invoices svg');
+    navInvoices.style.background = '#F0F7FF';
+    p.style.color = '#197BBD';
+    svg.style.stroke =  '#197BBD';
+});
+navInvoices.addEventListener('mouseout', function () {
+    let p = document.querySelector('#nav-item-invoices a');
+    let svg = document.querySelector('#nav-item-invoices svg');
+    navInvoices.style.background = 'none';
+    p.style.color = '#C7C7C7';
+    svg.style.stroke =  '#C7C7C7';
+});
+navGoals.addEventListener('mouseover', function () {
+    let p = document.querySelector('#nav-item-goals a');
+    let svg = document.querySelector('#nav-item-goals svg');
+    navGoals.style.background = '#F0F7FF';
+    p.style.color = '#197BBD';
+    svg.style.stroke =  '#197BBD';
+});
+navGoals.addEventListener('mouseout', function () {
+    let p = document.querySelector('#nav-item-goals a');
+    let svg = document.querySelector('#nav-item-goals svg');
+    navGoals.style.background = 'none';
+    p.style.color = '#C7C7C7';
+    svg.style.stroke =  '#C7C7C7';
+});
+navSettings.addEventListener('mouseover', function () {
+    let p = document.querySelector('#nav-item-settings a');
+    let svg = document.querySelector('#nav-item-settings svg');
+    navSettings.style.background = '#F0F7FF';
+    p.style.color = '#197BBD';
+    svg.style.stroke =  '#197BBD';
+});
+navSettings.addEventListener('mouseout', function () {
+    let p = document.querySelector('#nav-item-settings a');
+    let svg = document.querySelector('#nav-item-settings svg');
+    navSettings.style.background = 'none';
+    p.style.color = '#C7C7C7';
+    svg.style.stroke =  '#C7C7C7';
+});
+
+let btnDeactOuter = document.querySelector('.btn-deactivate');
+let btnDeactInner = document.querySelector('.btn-deactivate-inner');
+var btnDeactStatus = 0;
+btnDeactOuter.addEventListener('click', function () {
+    if (btnDeactStatus == 0) {
+        btnDeactOuter.style.transform = 'rotate(180deg)';
+        btnDeactOuter.style.background = '#70A6E8';
+        btnDeactInner.style.background = '#197BBD';
+        btnDeactStatus = 1;
+    } else {
+        btnDeactOuter.style.transform = 'rotate(0deg)';
+        btnDeactOuter.style.background = '#EBEBEB   ';
+        btnDeactInner.style.background = '#CDCDCD';
+        btnDeactStatus = 0;
+    }
+});

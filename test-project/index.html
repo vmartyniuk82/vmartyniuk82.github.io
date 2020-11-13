@@ -8,15 +8,16 @@
     <script type="text/javascript" src="jquery-3.5.1.min.js"></script>
     <script type="text/javascript" src="slider/slick-1.8.1/slick/slick.min.js"></script>
     <link rel="stylesheet" href="style.css">
-    <title>Cloudcash</title>        <!-- FAVICON -->
+    <link rel="shortcut icon" href="images/logo.svg" type="image/svg">
+    <title>Financial Dashboard</title>        <!-- FAVICON -->
 </head>
-<body class="dashboard">    <!-- background -->
-    <div class="board">         <!-- board-content -->
-        <header>                        <!-- header -->
+<body class="dashboard">
+    <div class="board">
+        <header>
             <div class="board-name">
                 <div class="logo">
                     <img src="images/logo.svg" alt="logotype">
-                    <p>cloudcash</p>
+                    <a href="https://cloudcash.com">cloudcash</a>
                 </div>
                 <div class="title">
                     <h1>Weekly sumup</h1>
@@ -28,52 +29,128 @@
                 <img src="images/for-bell.svg" alt="bell">
                 <img src="images/for-account-icon.svg" alt="account-icon">
                 <div class="account-data">
-                    <p>Andrew</p>
-                    <p>Admin account</p>
+                    <a href="#">Andrew</a>
+                    <a href="#">Admin account</a>
                 </div>
             </div>
         </header>
-        <div class="board-content">      <!-- board-content -->
-            <nav>                           <!-- navigation -->
+        <div class="board-content">
+            <nav>
                 <div class="nav-links">
-                    <div class="nav-item">
-                        <img src="images/nav-overview.svg" alt="">
-                        <p>Overview</p>
+                    <div id="nav-item-overview" class="nav-item">
+                        <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.75787 24.0048L6.75787 6.92108" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6.75767 24.0046L23.8414 24.0046" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M10.5943 17.0974C12.822 15.0627 14.4198 13.8993 16.2216 12.2839L17.3399 16.6643L22.2127 12.5568"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <a href="#">Overview</a>
                     </div>
-                    <div class="nav-item">
-                        <img src="images/nav-transactions.svg" alt="">
-                        <p>Transactions</p>
+                    <div id="nav-item-transactions" class="nav-item">
+                        <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.4908 9.74953H23.8701" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M11.4908 15.463H23.8701" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M11.4908 21.1765H23.8701" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6.7298 9.74965H6.73836" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6.72955 15.463H6.73812" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6.72955 21.1765H6.73812" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <a href="#">Transactions</a>
                     </div>
-                    <div class="nav-item">
-                        <img src="images/nav-cards.svg" alt="">
-                        <p>Cards</p>
+                    <div id="nav-item-cards" class="nav-item">
+                        <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22.6634 8.46317H7.93611C7.03237 8.46317 6.29974 9.24667 6.29974 10.2132V20.7132C6.29974 
+                            21.6797 7.03237 22.4632 7.93611 22.4632H22.6634C23.5671 22.4632 24.2997 21.6797 24.2997 
+                            20.7132V10.2132C24.2997 9.24667 23.5671 8.46317 22.6634 8.46317Z" 
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6.29974 13.4632H24.2997" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <a href="#">Cards</a>
                     </div>
-                    <div class="nav-item">
-                        <img src="images/nav-invoices.svg" alt="">
-                        <p>Invoices</p>
+                    <div id="nav-item-invoices" class="nav-item">
+                        <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.9011 7.45601H10.4955C10.0708 7.45601 9.66347 7.62473 9.36315 7.92505C9.06282 8.22537 
+                            8.8941 8.6327 8.8941 9.05742V21.8687C8.8941 22.2934 9.06282 22.7007 9.36315 23.001C9.66347 23.3014 
+                            10.0708 23.4701 10.4955 23.4701H20.104C20.5287 23.4701 20.936 23.3014 21.2363 23.001C21.5366 22.7007 
+                            21.7054 22.2934 21.7054 21.8687V12.2602L16.9011 7.45601Z" 
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16.9012 7.45578V12.26H21.7055" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <a href="#">Invoices</a>
                     </div>
-                    <div class="nav-item">
-                        <img src="images/nav-goals.svg" alt="">
-                        <p>Goals</p>
+                    <div id="nav-item-goals" class="nav-item">
+                        <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.2996 17.9139C18.4581 17.9139 21.0185 15.3535 21.0185 12.195C21.0185 9.03651 18.4581 6.47605 
+                            15.2996 6.47605C12.1411 6.47605 9.58063 9.03651 9.58063 12.195C9.58063 15.3535 12.1411 17.9139 15.2996 
+                            17.9139Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12.2032 17.683L11.2146 25.1258L15.2996 22.6749L19.3845 25.1258L18.396 17.6749" 
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <a href="#">Goals</a>
                     </div>
-                    <div class="nav-item">
-                        <img src="images/nav-settings.svg" alt="">
-                        <p>Settings</p>
+                    <div id="nav-item-settings" class="nav-item">
+                        <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.3 17.7785C16.5785 17.7785 17.6149 16.742 17.6149 15.4635C17.6149 14.185 16.5785 13.1486 
+                            15.3 13.1486C14.0215 13.1486 12.985 14.185 12.985 15.4635C12.985 16.742 14.0215 17.7785 15.3 17.7785Z" 
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M21.01 17.7783C20.9072 18.011 20.8766 18.2692 20.922 18.5195C20.9674 18.7698 21.0867 19.0008 
+                            21.2646 19.1827L21.3109 19.229C21.4544 19.3723 21.5682 19.5425 21.6459 19.7298C21.7235 19.9172 21.7635 
+                            20.118 21.7635 20.3208C21.7635 20.5236 21.7235 20.7245 21.6459 20.9118C21.5682 21.0992 21.4544 21.2694 
+                            21.3109 21.4127C21.1676 21.5562 20.9974 21.67 20.81 21.7477C20.6227 21.8254 20.4218 21.8653 20.219 
+                            21.8653C20.0162 21.8653 19.8154 21.8254 19.628 21.7477C19.4407 21.67 19.2705 21.5562 19.1271 
+                            21.4127L19.0808 21.3664C18.899 21.1885 18.668 21.0692 18.4177 21.0238C18.1674 20.9784 17.9092 
+                            21.009 17.6765 21.1118C17.4482 21.2096 17.2536 21.372 17.1165 21.579C16.9794 21.786 16.9058 22.0286 
+                            16.9048 22.2769V22.4081C16.9048 22.8174 16.7422 23.21 16.4528 23.4994C16.1634 23.7888 15.7708 23.9514 
+                            15.3615 23.9514C14.9522 23.9514 14.5597 23.7888 14.2703 23.4994C13.9808 23.21 13.8182 22.8174 13.8182 
+                            22.4081V22.3387C13.8123 22.0833 13.7296 21.8356 13.581 21.6278C13.4323 21.42 13.2246 21.2617 12.9849 
+                            21.1735C12.7521 21.0708 12.4939 21.0401 12.2436 21.0855C11.9933 21.1309 11.7623 21.2502 11.5805 
+                            21.4281L11.5342 21.4744C11.3908 21.6179 11.2206 21.7318 11.0333 21.8094C10.8459 21.8871 10.6451 21.9271 
+                            10.4423 21.9271C10.2395 21.9271 10.0387 21.8871 9.8513 21.8094C9.66395 21.7318 9.49374 21.6179 9.35041 
+                            21.4744C9.20693 21.3311 9.09309 21.1609 9.01543 20.9735C8.93776 20.7862 8.89779 20.5854 8.89779 
+                            20.3826C8.89779 20.1797 8.93776 19.9789 9.01543 19.7916C9.09309 19.6042 9.20693 19.434 9.35041 
+                            19.2907L9.39671 19.2444C9.57461 19.0625 9.69394 18.8315 9.73933 18.5812C9.78471 18.3309 9.75407 
+                            18.0727 9.65136 17.84C9.55354 17.6118 9.39112 17.4171 9.1841 17.28C8.97707 17.1429 8.73448 17.0693 
+                            8.48617 17.0683H8.35499C7.94569 17.0683 7.55315 16.9058 7.26373 16.6163C6.9743 16.3269 6.81171 15.9344 
+                            6.81171 15.5251C6.81171 15.1158 6.9743 14.7232 7.26373 14.4338C7.55315 14.1444 7.94569 13.9818 8.35499 
+                            13.9818H8.42444C8.67985 13.9758 8.92756 13.8931 9.13536 13.7445C9.34316 13.5959 9.50144 13.3882 9.58962 
+                            13.1484C9.69234 12.9157 9.72298 12.6575 9.6776 12.4072C9.63221 12.1568 9.51287 11.9259 9.33498 
+                            11.744L9.28868 11.6977C9.14519 11.5544 9.03136 11.3842 8.9537 11.1968C8.87603 11.0095 8.83606 10.8086 
+                            8.83606 10.6058C8.83606 10.403 8.87603 10.2022 8.9537 10.0148C9.03136 9.82749 9.14519 9.65728 9.28868 
+                            9.51395C9.43201 9.37047 9.60222 9.25663 9.78957 9.17897C9.97692 9.1013 10.1777 9.06133 10.3806 
+                            9.06133C10.5834 9.06133 10.7842 9.1013 10.9715 9.17897C11.1589 9.25663 11.3291 9.37047 11.4724 
+                            9.51395L11.5187 9.56025C11.7006 9.73815 11.9316 9.85748 12.1819 9.90287C12.4322 9.94825 12.6904 
+                            9.91761 12.9231 9.8149H12.9849C13.2131 9.71708 13.4077 9.55466 13.5448 9.34764C13.6819 9.14061 
+                            13.7555 8.89802 13.7565 8.64971V8.51853C13.7565 8.10923 13.9191 7.71669 14.2085 7.42726C14.4979 
+                            7.13784 14.8905 6.97525 15.2998 6.97525C15.7091 6.97525 16.1016 7.13784 16.3911 7.42726C16.6805 
+                            7.71669 16.8431 8.10923 16.8431 8.51853V8.58798C16.8441 8.83629 16.9176 9.07888 17.0547 9.28591C17.1918 
+                            9.49293 17.3865 9.65535 17.6147 9.75316C17.8475 9.85588 18.1056 9.88652 18.356 9.84114C18.6063 9.79575 
+                            18.8373 9.67641 19.0191 9.49852L19.0654 9.45222C19.2087 9.30873 19.3789 9.1949 19.5663 9.11724C19.7537 
+                            9.03957 19.9545 8.9996 20.1573 8.9996C20.3601 8.9996 20.5609 9.03957 20.7483 9.11724C20.9356 9.1949 
+                            21.1058 9.30873 21.2492 9.45222C21.3927 9.59555 21.5065 9.76576 21.5841 9.95311C21.6618 10.1405 21.7018 
+                            10.3413 21.7018 10.5441C21.7018 10.7469 21.6618 10.9477 21.5841 11.1351C21.5065 11.3224 21.3927 11.4926 
+                            21.2492 11.636L21.2029 11.6823C21.025 11.8641 20.9056 12.0951 20.8603 12.3454C20.8149 12.5958 20.8455 
+                            12.8539 20.9482 13.0867V13.1484C21.046 13.3766 21.2085 13.5713 21.4155 13.7084C21.6225 13.8455 21.8651 
+                            13.9191 22.1134 13.92H22.2446C22.6539 13.92 23.0464 14.0826 23.3359 14.3721C23.6253 14.6615 23.7879 
+                            15.054 23.7879 15.4633C23.7879 15.8726 23.6253 16.2652 23.3359 16.5546C23.0464 16.844 22.6539 17.0066 
+                            22.2446 17.0066H22.1751C21.9268 17.0076 21.6842 17.0812 21.4772 17.2183C21.2702 17.3554 21.1078 17.55 
+                            21.01 17.7783V17.7783Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <a href="#">Settings</a>
                     </div>
                 </div>
                 <div class="nav-upgrade">
-                    <img src="images/for-btn-upgrade.svg" alt="">
+                    <img src="images/for-btn-upgrade.svg" alt="image-money-to-cloud">
                     <p>Give your money <br>awesome space in cloud</p>
-                    <button class="btn-upgrade">Upgrade to premium <img src="images/arr-up.svg" alt=""></button>
+                    <button class="btn-upgrade"><a href="https://google.com">Upgrade to premium</a><img src="images/arr-up.svg" alt="arrow-up"></button>
                 </div>
             </nav>
-            <main>                          <!-- main content -->
-                <div class="column-left">       <!------------first column--------------->
-                    <div class="cards">             <!-- cards -->
+            <main>
+                <div class="column-left">
+                    <div class="cards">
                         <h2>Cards</h2>
                         <div class="card-wrapper">
                             <div class="card-content-left">
-                                <div class="single-slide">      <!-- slick slider -->
+                                <div class="single-slide">
                                     <div data-card-item="1" class="card-item">
                                         <div class="card-item-wrapper">
                                             <p class="card-brand">cloudcash</p>   
@@ -139,16 +216,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="transactions">                  <!-- transaction history -->
+                    <div class="transactions">
                         <h2>Transaction history</h2>
                         <div class="transactions-wrapper">
-                            <div class="transactions-header">   <!-- transactions header row -->
+                            <div class="transactions-header">
                                 <p class="receiver">Receiver</p>
                                 <p class="type">Type</p>
                                 <p class="date">Date</p>
                                 <p class="amount">Amount</p>
                             </div>
-                            <div class="transactions-row">      <!-- transactions data rows -->
+                            <div class="transactions-row">
                                 <img src="images/history-shopping.svg" alt="history-shopping">
                                 <p class="receiver">Tesco Market</p>
                                 <p class="type">Shopping</p>
@@ -186,13 +263,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="column-right">  <!------------second column--------------->
-                    <div class="goals">         <!-- goals -->
+                <div class="column-right">
+                    <div class="goals">
                         <div class="goals-header">
                             <h2>Goals</h2>
                             <img src="images/plus-circle.svg" alt="picture Add new">
                         </div>
-                        <div class="multiple-items">    <!-- slick slider -->
+                        <div class="multiple-items">
                             <div class="goal-item">
                                 <div class="goal-item-wrapper">
                                     <p class="goal-amount">$550.00</p>
@@ -235,7 +312,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="statistics">            <!-- outcome statistics -->
+                    <div class="statistics">
                         <h2>Outcome statistics</h2>
                         <div data-statistics="1" class="statistics-item">
                             <img src="images/stat-shopping.svg" alt="statistics-shopping">
@@ -262,7 +339,7 @@
                             <p data-statistics-percent="3" class="statistics-percent">74%</p>
                         </div>
                     </div>
-                    <div class="new-transaction">       <!--    new transaction     -->
+                    <div class="new-transaction">
                         <div class="new-transaction-wrapper">
                             <h2>New transactions</h2>
                             <div class="persons">
@@ -292,12 +369,12 @@
                                 </div>
                             </div>
                             <form action="" class="field-send-amount">
-                                <input id="send-amount" type="text" placeholder="0                              $">
-                                <button class="btn-send-transfer">Send the transfer <img src="images/btn-arr-right.svg" alt="arr-right"></button>
+                                <input name="send-amount" id="send-amount" type="text" placeholder="0                              $">
+                                <button class="btn-send-transfer">Send the transfer <img src="images/btn-arr-right.svg" alt="arrow-right"></button>
                             </form>
                         </div>
-                        <div class="get-loan">          <!-- get-loan -->
-                            <a href="#">Get great loan! <img src="images/for-get-loan-arrow.svg" alt="get-loan"></a>
+                        <div class="get-loan">
+                            <a href="https://google.com">Get great loan! <img src="images/for-get-loan-arrow.svg" alt="get-loan"></a>
                         </div>
                     </div>
                 </div>
