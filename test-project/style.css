@@ -50,7 +50,7 @@ img {
     height: 10px;
     border-radius: 11px;
     background: #197BBD;
-    transition: width 2s;
+    transition: width 1.5s;
 }
 .dashboard {
     background: linear-gradient(180deg, #E6E6E6 0%, rgba(240, 240, 240, 0) 100%);
@@ -283,10 +283,10 @@ main {
     box-shadow: 0px 8px 14px rgba(0, 0, 0, 0.12), 0px 2px 6px rgba(0, 0, 0, 0.08), 0px 0px 1px rgba(0, 0, 0, 0.04);
     position: relative;
 }
-#card-item-1 {
+.card-item-1 {
     background: linear-gradient(180deg, #197BBD 0%, #3391D0 100%);
 }
-#card-item-2 {
+.card-item-2 {
     background: linear-gradient(180deg, #19bd99 0%, #72d033 100%);
 }
 .card-item-wrapper {
@@ -403,6 +403,9 @@ main {
     display: flex;
     flex-flow: column nowrap;
     align-items: flex-end;
+}
+.card-deactivate:hover {
+    cursor: pointer;
 }
 .card-deactivate p {
     padding-top: 10.53px;

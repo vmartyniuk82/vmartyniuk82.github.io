@@ -67,7 +67,7 @@ const arr = [
             {amount: '$500.00', date: '12/20/20', goal: 'Renovation'},
             {amount: '$999.00', date: '12/20/20', goal: 'PS5'},
             {amount: '$430.00', date: '12/20/20', goal: 'Renovation'},
-            {amount: '$80.00', date: '12/20/20', goal: 'DOOM game'},
+            {amount: '$80.00', date: '12/20/20', goal: 'DOOM'},
         ],
         statistics: [30, 85, 45]
     }
@@ -82,14 +82,17 @@ $('.single-slide').on('afterChange', function(event, slick, currentSlide, nextSl
 
 /* card */
 function fillCardData (i) {
-    let cardNubmber = document.querySelector('#card-item-' + (i + 1) + ' .card-number');
-    let cardHolder = document.querySelector('#card-item-' + (i + 1) + ' .card-holder');
-    let cardExpire = document.querySelector('#card-item-' + (i + 1) + ' .card-expire');
+    let cardNubmber = document.querySelector('.card-item-' + (i + 1) + ' .card-number');
+    let cardHolder = document.querySelector('.card-item-' + (i + 1) + ' .card-holder');
+    let cardExpire = document.querySelector('.card-item-' + (i + 1) + ' .card-expire');
     let cardBalance = document.querySelector('.cash-current');
     let cardIncome = document.querySelector('.cash-income');
     let cardOutcome = document.querySelector('.cash-outcome');
     let cardLimit = document.querySelector('#card-limit');
     let cardProgress = document.querySelector('#card-progress-bar-inner');
+
+    // console.log(cardNubmber);
+
     cardNubmber.innerHTML = arr[i].cardNubmber;
     cardHolder.innerHTML = arr[i].cardHolder;
     cardExpire.innerHTML = arr[i].cardExpire;
