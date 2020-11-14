@@ -1,31 +1,11 @@
-// --- slick section --- 
-$('.single-slide').slick({
-    infinite: true,
-    prevArrow: "<img src='images/arr-left.svg' class='prev' alt='1'>",
-    nextArrow: "<img src='images/arr-right.svg' class='next' alt='2'>",
-});
-$('.multiple-items').slick({
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    nextArrow: "<img src='images/arr-right.svg' class='next' alt='2'>",
-    responsive: [{
-        breakpoint: 639,
-        settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            infinite: true,
-        }
-    }]
-});
 // --- cards array --- 
 const arr = [
     {
         cardId: 1,
-        cardNubmber: '6363 &nbsp;&nbsp;* * * * &nbsp;&nbsp; * * * * &nbsp;&nbsp;5891',
+        cardNubmber: '5789 &nbsp;&nbsp;* * * * &nbsp;&nbsp; * * * * &nbsp;&nbsp;2847',
         cardHolder: 'Mike Smith',
         cardExpire: '06/21',
-        cardBalance: '2856.75',
+        cardBalance: '2850.75',
         cardIncome: '1500.50',
         cardOutcome: '1350.60',
         cardLimit: '4000.00',
@@ -72,30 +52,56 @@ const arr = [
         statistics: [30, 85, 45]
     }
 ]
-
 //  -------------------------------
+
+fillCardItems ();
 fillCardData (0);
 
+// --- slick section --- 
+$('.single-slide').slick({
+    infinite: true,
+    prevArrow: "<img src='images/arr-left.svg' class='prev' alt='1'>",
+    nextArrow: "<img src='images/arr-right.svg' class='next' alt='2'>",
+});
+$('.multiple-items').slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    nextArrow: "<img src='images/arr-right.svg' class='next' alt='2'>",
+    responsive: [{
+        breakpoint: 639,
+        settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: true,
+        }
+    }]
+});
 $('.single-slide').on('afterChange', function(event, slick, currentSlide, nextSlide){
     fillCardData(Number($('.slick-active').attr('data-slick-index')));
 });
 
-/* card */
+//-------------
+
+function fillCardItems () {
+    for (let x = 0; x < (arr.length); x++) {
+        let cardNubmber = document.querySelector('.card-item-' + (x + 1) + ' .card-number');
+        let cardHolder = document.querySelector('.card-item-' + (x + 1) + ' .card-holder');
+        let cardExpire = document.querySelector('.card-item-' + (x + 1) + ' .card-expire');
+        cardNubmber.innerHTML = arr[x].cardNubmber;
+        cardHolder.innerHTML = arr[x].cardHolder;
+        cardExpire.innerHTML = arr[x].cardExpire;
+    }
+};
+
 function fillCardData (i) {
-    let cardNubmber = document.querySelector('.card-item-' + (i + 1) + ' .card-number');
-    let cardHolder = document.querySelector('.card-item-' + (i + 1) + ' .card-holder');
-    let cardExpire = document.querySelector('.card-item-' + (i + 1) + ' .card-expire');
+
+    /* card */
     let cardBalance = document.querySelector('.cash-current');
     let cardIncome = document.querySelector('.cash-income');
     let cardOutcome = document.querySelector('.cash-outcome');
     let cardLimit = document.querySelector('#card-limit');
     let cardProgress = document.querySelector('#card-progress-bar-inner');
-
-    // console.log(cardNubmber);
-
-    cardNubmber.innerHTML = arr[i].cardNubmber;
-    cardHolder.innerHTML = arr[i].cardHolder;
-    cardExpire.innerHTML = arr[i].cardExpire;
     cardBalance.innerHTML = '$ ' + arr[i].cardBalance;
     cardIncome.innerHTML = '$ ' + arr[i].cardIncome;
     cardOutcome.innerHTML = '$ ' + arr[i].cardOutcome;
