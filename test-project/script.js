@@ -1,100 +1,58 @@
-// --- cards array --- 
-const arr = [
-    {
-        cardId: 1,
-        cardNubmber: '5789 &nbsp;&nbsp;* * * * &nbsp;&nbsp; * * * * &nbsp;&nbsp;2847',
-        cardHolder: 'Mike Smith',
-        cardExpire: '06/21',
-        cardBalance: '2850.75',
-        cardIncome: '1500.50',
-        cardOutcome: '1350.60',
-        cardLimit: '4000.00',
-        cardDeact: false,
-        transactions: [
-            {receiver: 'Tesco Market', type: 'Shopping', date: '23 Dec 2020', amount: '$75.67'},
-            {receiver: 'ElectroMen Market', type: 'Shopping', date: '14 Dec 2020', amount: '$250.00'},
-            {receiver: 'Fiorgio Restaurant', type: 'Food', date: '07 Dec 2020', amount: '$19.50'},
-            {receiver: 'Tesco Market', type: 'Sport', date: '06 Dec 2020', amount: '$350.00'}
-        ],
-        goals: [
-            {amount: '$550.00', date: '12/20/20', goal: 'Holidays'},
-            {amount: '$200.00', date: '12/20/20', goal: 'Renovation'},
-            {amount: '$820.00', date: '12/20/20', goal: 'Xbox'},
-            {amount: '$1430.00', date: '12/20/20', goal: 'Renovation'},
-            {amount: '$935.00', date: '12/20/20', goal: 'Xbox'},
-        ],
-        statistics: [52, 68, 74]
-    },
-    {
-        cardId: 2,
-        cardNubmber: '6363 &nbsp;&nbsp;* * * * &nbsp;&nbsp; * * * * &nbsp;&nbsp;5891',
-        cardHolder: 'John Deer',
-        cardExpire: '03/23',
-        cardBalance: '1210.50',
-        cardIncome: '500.00',
-        cardOutcome: '2880.00',
-        cardLimit: '4000.00',
-        cardDeact: false,
-        transactions: [
-            {receiver: 'ElectroMen Market', type: 'Shopping', date: '14 Dec 2020', amount: '$250.00'},
-            {receiver: 'Tesco Market', type: 'Sport', date: '06 Dec 2020', amount: '$350.00'},
-            {receiver: 'Tesco Market', type: 'Shopping', date: '23 Dec 2020', amount: '$75.67'},
-            {receiver: 'Fiorgio Restaurant', type: 'Food', date: '07 Dec 2020', amount: '$19.50'}
-            
-        ],
-        goals: [
-            {amount: '$2333.00', date: '12/20/20', goal: 'Holidays'},
-            {amount: '$500.00', date: '12/20/20', goal: 'Renovation'},
-            {amount: '$999.00', date: '12/20/20', goal: 'PS5'},
-            {amount: '$430.00', date: '12/20/20', goal: 'Renovation'},
-            {amount: '$80.00', date: '12/20/20', goal: 'DOOM'},
-        ],
-        statistics: [30, 85, 45]
-    }
-]
-//  -------------------------------
-
-fillCardItems ();
-fillCardData (0);
+let xhr = new XMLHttpRequest();
+xhr.addEventListener('readystatechange', function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            let dataTxt = xhr.responseText;
+            let data = JSON.parse(dataTxt);
+            window.data = data;
+            fillCardItems(data);
+            fillCardData(data, 0);
+            initSlick();
+        };
+});
+xhr.open('get', 'https://secret-refuge-89433.herokuapp.com/api/v1/dashboards/financial');
+xhr.send();
 
 // --- slick section --- 
-$('.single-slide').slick({
-    infinite: true,
-    prevArrow: "<img src='images/arr-left.svg' class='prev' alt='1'>",
-    nextArrow: "<img src='images/arr-right.svg' class='next' alt='2'>",
-});
-$('.multiple-items').slick({
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    nextArrow: "<img src='images/arr-right.svg' class='next' alt='2'>",
-    responsive: [{
-        breakpoint: 639,
-        settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            infinite: true,
-        }
-    }]
-});
-$('.single-slide').on('afterChange', function(event, slick, currentSlide, nextSlide){
-    fillCardData(Number($('.slick-active').attr('data-slick-index')));
-});
+function initSlick() {
+    $('.single-slide').slick({
+        infinite: true,
+        prevArrow: "<img src='images/arr-left.svg' class='prev' alt='1'>",
+        nextArrow: "<img src='images/arr-right.svg' class='next' alt='2'>",
+    });
+    $('.multiple-items').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        nextArrow: "<img src='images/arr-right.svg' class='next' alt='2'>",
+        responsive: [{
+            breakpoint: 639,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: true,
+            }
+        }]
+    });
+    $('.single-slide').on('afterChange', function(event, slick, currentSlide, nextSlide){
+        fillCardData(window.data, Number($('.slick-active').attr('data-slick-index')));
+        fillCardItems(window.data);
+    });
+};
 
 //-------------
 
-function fillCardItems () {
+function fillCardItems(arr) {
     for (let x = 0; x < (arr.length); x++) {
-        let cardNubmber = document.querySelector('.card-item-' + (x + 1) + ' .card-number');
+        let cardNumber = document.querySelector('.card-item-' + (x + 1) + ' .card-number');
         let cardHolder = document.querySelector('.card-item-' + (x + 1) + ' .card-holder');
         let cardExpire = document.querySelector('.card-item-' + (x + 1) + ' .card-expire');
-        cardNubmber.innerHTML = arr[x].cardNubmber;
+        cardNumber.innerHTML = arr[x].cardNubmber;
         cardHolder.innerHTML = arr[x].cardHolder;
         cardExpire.innerHTML = arr[x].cardExpire;
     }
 };
 
-function fillCardData (i) {
+function fillCardData(arr, i) {
 
     /* card */
     let cardBalance = document.querySelector('.cash-current');
