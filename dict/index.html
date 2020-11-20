@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="outer-wrapper">
+        <h1>5000 words</h1>
+        
+        <div class="word-guess">
+            <p>ant</p>
+        </div>
+        <div class="word-translate">
+            <p>ant</p>
+        </div>
+        <div class="buttons-block">
+            <button id="bntKnown">I know it!</button>
+            <button id="bntUnknown">Translate</button>
+        </div>
+
+        <div id="data-word-known" class="mydata">
+            <p class="mydata--name">I know:</p>
+            <p class="mydata--count">0</p>
+            <p class="mydata--perc">0%</p>
+        </div>
+        <div id="progress-bar-known" class="progress-bar">
+            <div class="progress-bar-inner"></div>
+        </div>
+        <div id="data-word-unknown" class="mydata">
+            <p class="mydata--name">I don't know:</p>
+            <p class="mydata--count">0</p>
+            <p class="mydata--perc">0%</p>
+        </div>
+        <div id="progress-bar-unknown" class="progress-bar">
+            <div class="progress-bar-inner"></div>
+        </div>
+    </div>
+
+    <script src="js.js"></script>
+</body>
+</html>

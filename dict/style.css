@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.outer-wrapper {
+    width: 320px;
+    height: 600px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    margin: 20px auto;
+    background: whitesmoke;
+}
+h1 {
+    color: rgb(65, 102, 139);
+    text-align: center;
+    margin: 20px;
+}
+.mydata {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 20px 10px 20px;
+    font-style: italic;
+}
+p {
+    font-size: 18px;
+    line-height: 1;
+}
+.progress-bar {
+    width: 280px;
+    height: 10px;
+    margin: 0 20px 20px 20px;
+    border-radius: 15px;
+    background: rgb(200, 200, 200);
+    
+}
+#progress-bar-known .progress-bar-inner {
+    width: 20%;
+    height: 10px;
+    border-radius: 15px;
+    background: rgb(96, 248, 104);
+}
+#progress-bar-unknown .progress-bar-inner {
+    width: 20%;
+    height: 10px;
+    border-radius: 15px;
+    background: rgb(96, 123, 248);
+}
+.word-guess,
+.word-translate {
+    height: 75px;
+    margin: 10px 20px 20px 20px;
+    padding: 5px;
+    border-radius: 10px;
+    background: white;
+    border: 1px solid rgb(197, 197, 197);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.word-guess > p {
+    width: 100%;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+}
+.word-translate > p {
+    width: 100%;
+    color: grey;
+    font-size: 28px;
+    text-align: center;
+}
+.buttons-block {
+    margin: 50px 20px;
+    display: flex;
+    justify-content: space-around;
+}
+button {
+    width: 120px;
+    height: 50px;
+    font-size: 22px;
+    border-radius: 10px;
+    outline: none;
+    background: white;
+}
